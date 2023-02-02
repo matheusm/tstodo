@@ -1,0 +1,33 @@
+.taskForm {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.taskInput, .taskButton {
+  border-radius: 8px;
+  padding: 1rem;
+}
+
+.taskInput {
+  width: 100%;
+  border: 1px solid var(--gray-700);
+  background-color: var(--gray-500);
+  color: var(--gray-300);
+}
+
+.taskInput::placeholder {
+  color: var(--gray-300);
+}
+
+.taskButton {
+  background-color: var(--blue-800);
+  color: var(--gray-100);
+  outline: none;
+  border: 0;
+  cursor: pointer;
+  transition: background-color 0.2s ease-out;
+}
+
+.taskButton:hover {
+  background-color: var(--blue-500);
+}
