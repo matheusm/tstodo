@@ -1,41 +1,25 @@
 import styles from './TaskList.module.css';
 
 import { Task } from "../Types";
+import { TaskListItem } from './TaskListItem';
 
 type TaskListProps = {
   tasks: Task[];
   handleTaskToggle: (task_id: string) => void;
-  handleDeleteTask: (task: string) => void;
+  handleTaskDelete: (task: string) => void;
 }
 
-export function TaskList({ tasks, handleTaskToggle, handleDeleteTask }: TaskListProps) {
+export function TaskList({ tasks, handleTaskToggle, handleTaskDelete }: TaskListProps) {
   return (
     <form>
       <ul className={styles.list}>
         {tasks.map(task => (
-          <li key={task.id} className={styles.listItem}>
-            <input 
-              className={styles.listItem__input}
-              type="checkbox" 
-              id={task.id} 
-              checked={task.isCompleted}
-              onChange={() => handleTaskToggle(task.id)}
-            />
-            <label 
-              className={styles.listItem__title} 
-              htmlFor={task.id}
-            >
-              {task.title}
-            </label>
-
-            <button 
-              className={styles.listItem__delete} 
-              type="button" 
-              onClick={() => handleDeleteTask(task.id)}
-            >
-              delete
-            </button>
-          </li>
+          <TaskListItem
+            key={task.id}
+            task={task}
+            deleteTask={handleTaskDelete}
+            toggleTask={handleTaskToggle}
+          />
         ))}
       </ul>
     </form>

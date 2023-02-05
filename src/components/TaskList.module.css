@@ -5,27 +5,3 @@
   gap: 0.75rem;
   margin-top: 4rem;
 }
-
-.listItem {
-  padding: 1rem;
-  background-color: var(--gray-500);
-  border-radius: 8px;
-  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.06);
-  border: 1px solid var(--gray-400);
-
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.listItem__title {
-  flex: 1;
-  margin-left: 0.5rem;
-  color: var(--gray-100);
-  user-select: none;
-}
-
-.listItem__input:checked ~ .listItem__title {
-  text-decoration: line-through;
-  color: var(--gray-300);
-}

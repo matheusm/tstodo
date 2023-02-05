@@ -37,7 +37,11 @@ export function App() {
       <main className={styles.container}>
         <Form addNewTask={handleAddNewTask} />
 
-        <TaskList tasks={tasks} handleTaskToggle={handleTaskToggle} handleDeleteTask={handleDeleteTask} />
+        <TaskList
+          tasks={tasks}
+          handleTaskToggle={handleTaskToggle}
+          handleTaskDelete={handleDeleteTask}
+        />
       </main>
 
     </div>
