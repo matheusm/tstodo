@@ -25,14 +25,8 @@ export function App() {
     setTasks(newTasks);
   }
 
-  function handleDeleteTask(task: Task){
-    let newTasks = [...tasks];
-
-    const index = tasks.indexOf(task);
-
-    if(index === -1) return;
-    
-    newTasks.splice(index, 1)
+  function handleDeleteTask(id: string){
+    const newTasks = tasks.filter(task => task.id !== id)
     setTasks(newTasks)
   }
 

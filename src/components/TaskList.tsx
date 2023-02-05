@@ -5,7 +5,7 @@ import { Task } from "../Types";
 type TaskListProps = {
   tasks: Task[];
   handleTaskToggle: (task_id: string) => void;
-  handleDeleteTask: (task:Task) => void;
+  handleDeleteTask: (task: string) => void;
 }
 
 export function TaskList({ tasks, handleTaskToggle, handleDeleteTask }: TaskListProps) {
@@ -31,7 +31,7 @@ export function TaskList({ tasks, handleTaskToggle, handleDeleteTask }: TaskList
             <button 
               className={styles.listItem__delete} 
               type="button" 
-              onClick={() => handleDeleteTask(task)}
+              onClick={() => handleDeleteTask(task.id)}
             >
               delete
             </button>
